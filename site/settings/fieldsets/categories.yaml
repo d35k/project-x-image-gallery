@@ -1,0 +1,14 @@
+taxonomies:
+  categories: true
+title: Categories
+create_title: categories
+hide: true
+fields:
+  title:
+    type: title
+    display: Title
+    localizable: true
+  description:
+    type: textarea
+    display: Title of Category
+    localizable: true
