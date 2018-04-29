@@ -1,0 +1,51 @@
+<!-- Main Navigation
+        ================================================== -->
+        <div class="span7 navigation">
+            <div class="navbar hidden-phone">
+            
+            <ul class="nav">
+            <li><a href="/">Home Page</a></li>
+            <li class="dropdown active">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)">All Categories <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    {{ nav from="/" max_depth="1" }}
+                    <li class="{{ if is_current || is_parent }} active {{ /if }}">
+                        <a href="{{ url }}">
+                                {{ title }} 
+                        </a>
+                    </li>    
+            
+                        {{ if is_current || is_parent }}
+                            {{ if children }}
+                                    <ul>{{ *recursive children* }}</ul>
+                            {{ /if }}
+                        {{ /if }}
+                    {{ /nav }}
+                </ul>
+            </li>
+            </ul>
+           
+            </div>
+
+            <!-- Mobile Nav
+            ================================================== -->
+            <form action="#" id="mobile-nav" class="visible-phone">
+                <div class="mobile-nav-select">
+                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                    <option value="">Navigate...</option>
+                    <option value="/">Home</option>
+                    {{ nav from="/" max_depth="1" }}
+                    
+                    <option value="{{url}}">{{title}}</option>
+            
+                        {{ if is_current || is_parent }}
+                            {{ if children }}
+                                    <ul>{{ *recursive children* }}</ul>
+                            {{ /if }}
+                        {{ /if }}
+                    {{ /nav }}
+                </select>
+                </div>
+                </form>
+
+        </div>
