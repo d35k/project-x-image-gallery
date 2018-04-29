@@ -1,0 +1,17 @@
+title: Default Globals
+hide: true
+fields:
+  site_name:
+    type: text
+    display: Website Name
+    instructions: The name of your website
+    localizable: true
+  footer_text:
+    type: text
+    display: Footer Text
+    instructions: Footer Text of Your Website
+    localizable: true
+  logo_url:
+    type: text
+    display: Logo URL
+    instructions: URL of Your Website URL
