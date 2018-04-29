@@ -1,6 +1,18 @@
+taxonomies:
+  categories: true
 title: Default
+create_title: Default
 fields:
+  title:
+    type: title
+    display: Title
+    localizable: true
   content:
     type: markdown
     display: Content
+    cheatsheet: true
     localizable: true
+  template:
+    type: template
+    display: Main Template
+    width: 50
