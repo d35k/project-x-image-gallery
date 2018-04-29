@@ -6,10 +6,10 @@ fields:
     display: Website Name
     instructions: The name of your website
     localizable: true
-  footer_text:
+  header_text:
     type: text
-    display: Footer Text
-    instructions: Footer Text of Your Website
+    display: Header Text
+    instructions: Header Text of Your Website
     localizable: true
   logo_url:
     type: text
