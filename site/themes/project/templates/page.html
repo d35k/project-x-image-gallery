@@ -1,0 +1,43 @@
+<!-- Page Content
+    ================================================== --> 
+    <div class="row">
+        <!-- Gallery Items
+        ================================================== --> 
+        <div class="col-md-12" style="text-align:center; margin-bottom: 20px">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="span12 gallery">
+            <ul id="filterOptions" class="gallery-cats clearfix">
+                {{ nav from="/{segment_1}" max_depth="1" }}
+                <li class="{{ if is_current || is_parent }} active {{ /if }}">
+                    <a href="{{ url }}">
+                            {{ title }} 
+                        </a>
+                </li>    
+        
+                    {{ if is_current || is_parent }}
+                        {{ if children }}
+                                <ul>{{ *recursive children* }}</ul>
+                        {{ /if }}
+                    {{ /if }}
+                {{ /nav }}
+            </ul>
+
+        {{ collection from="images" taxonomy:categories=categories:0 paginate="true" limit="12" as="posts"}}
+            <div class="row clearfix">
+                    <ul class="gallery-post-grid holder">
+                    {{posts}}
+                    <li  class="span3 gallery-item" data-id="id-1" data-type="illustration">
+
+                        <a href="{{description}}" class="lightbox" rel="prettyPhoto" title="{{title}}"><img src="{{ glide:description width='300' height="300"}}" alt="Gallery"></a>
+                        <span class="project-details">{{title}}</span>
+                    </li>
+                    {{/posts}}
+                </ul>
+            </div>
+            {{partial:pagination}}
+        {{/collection}}
+
+        </div><!-- End gallery list-->
+
+    </div><!-- End container row -->
